@@ -1,12 +1,6 @@
 import { faker } from "@faker-js/faker";
+import { NextResponse } from "next/server";
 
-interface NewsItem {
-  id: number;
-  title: string;
-  description: string;
-  content: string;
-  url: string;
-}
 const newsData: NewsItem[] = Array.from({ length: 10 }, (_, index) => ({
   id: index,
   title: `${index + 1}번째 뉴스`,
@@ -16,5 +10,10 @@ const newsData: NewsItem[] = Array.from({ length: 10 }, (_, index) => ({
 }));
 
 export async function GET() {
-  return Response.json(newsData);
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(null);
+    }, 3000);
+  });
+  return NextResponse.json(newsData);
 }

@@ -1,14 +1,17 @@
 "use client";
-import { useEffect } from "react";
+
+import { Suspense } from "react";
+import { useFlux } from "./hooks/useFlux";
+import Loading from "./loading";
+import NewsCard from "@/components/NewsCard";
 
 export default function Flux() {
-  useEffect(() => {
-    fetch("/api/news", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Error:", error));
-  }, []);
-  return <h1>Flux</h1>;
+  const { newsList } = useFlux();
+  return (
+    <main className="container mx-auto">
+      <h1>Flux</h1>
+
+      <NewsCard newsList={newsList} />
+    </main>
+  );
 }
