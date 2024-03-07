@@ -1,6 +1,6 @@
 import { fetchAPI } from "@/app/api/fetch";
-import { getNews } from "@/lib/feature/newsSlice";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { getNews } from "@/libRedux/feature/newsSlice";
+import { useAppDispatch, useAppSelector } from "@/libRedux/hooks";
 import { useCallback, useEffect, useState } from "react";
 
 export const useFlux = () => {
