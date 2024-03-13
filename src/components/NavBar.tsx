@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function NavBar() {
   return (
-    <div className="w-full h-20 bg-emerald-800 sticky top-0">
+    <nav className="w-full h-20 bg-emerald-800 sticky top-0 z-999 mb-5">
       <div className="container mx-auto px-4 h-full">
         <div className="flex justify-between items-center h-full">
           {/* <img src="/vercel.svg" className="w-50 h-50" /> */}
@@ -19,6 +19,6 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
